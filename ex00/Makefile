@@ -1,13 +1,11 @@
 # Program name
-NAME    	= materia
+NAME    	= bureaucrat
 
 # Compiler options
 CXX     = c++ 
 CFLAGS  = -Wall -Wextra -Werror -std=c++98 -g
 
 DIR_OBJ = obj/
-
-DIR_SRC = src/
 
 # Colors
 RESET_COLOR = \033[0m
@@ -16,25 +14,21 @@ GREEN = \033[92m
 BLUE = \033[94m
 
 SRCS  = main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp  \
-		MateriaSource.cpp
+		Bureaucrat.cpp
 
-OBJ = $(patsubst $(DIR_SRC)%.cpp,$(DIR_OBJ)%.o,$(SRCS))
+OBJ = $(patsubst %.cpp,$(DIR_OBJ)%.o,$(SRCS))
 
 # Compiling project
 $(NAME): $(OBJ)
 		@echo "$(BOLD)$(BLUE)🛠️ 🚧     Compiling project...     🚧🛠️$(RESET_COLOR)"
 		@echo "\n"
 		@$(CXX) $(CFLAGS) -o $(NAME) $(OBJ)
-		@echo "$(BOLD)$(GREEN)🧊🩹   materia ready to use   🩹🧊$(RESET_COLOR)"
+		@echo "$(BOLD)$(GREEN)🧑‍💻   bureaucrat ready to use   🧑‍💻$(RESET_COLOR)"
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_OBJ)
 
-$(DIR_OBJ)%.o: $(DIR_SRC)%.cpp | $(DIR_OBJ)
+$(DIR_OBJ)%.o: %.cpp | $(DIR_OBJ)
 	@$(CXX) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
