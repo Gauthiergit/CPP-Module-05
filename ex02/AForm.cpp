@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:01:32 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:32:15 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:33:04 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,20 @@ void		AForm::beSigned(const Bureaucrat& bu)
 		throw AForm::GradeTooLowException();
 	else
 		this->_signed = true;
+}
+
+void	AForm::execute(Bureaucrat const& executor) const
+{
+	if (this->getSigned() == false)
+		throw UnsignedException();
+	else if (executor.getGrade() > this->getExegrade())
+		throw GradeTooLowException();
+	else
+	{
+		this->justDoIt();
+		std::cout << BLUE << executor.getName() << YELLOW << " executed " << BLUE <<
+			this->getName() << RESET << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, AForm& form)

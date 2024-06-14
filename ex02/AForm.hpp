@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:00:03 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:40:51 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 18:23:09 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class AForm
 	
 	AForm(std::string name, const int sigrade, const int exegrade);
 	AForm(const AForm &copy);
-	~AForm();
+	virtual ~AForm();
 
 	AForm& operator=(const AForm &change);
 
@@ -64,7 +64,9 @@ class AForm
 	int			getExegrade() const;
 	void		beSigned(const Bureaucrat& bu);
 
-	virtual void	execute(Bureaucrat const& executor) = 0;
+	void	execute(Bureaucrat const& executor) const;
+	virtual void justDoIt() const = 0;
+
 };
 
 std::ostream& operator<<(std::ostream& os, AForm& form);

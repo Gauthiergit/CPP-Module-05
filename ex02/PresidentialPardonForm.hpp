@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:08:21 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:22:16 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:33:51 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class  PresidentialPardonForm : public AForm
 
 	PresidentialPardonForm& operator=(const PresidentialPardonForm &change);
 
-	virtual void	execute(Bureaucrat const& executor);
+	virtual void	justDoIt() const;
 };
 
 

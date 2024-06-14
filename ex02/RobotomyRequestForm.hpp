@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:05:05 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:22:06 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:33:58 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class  RobotomyRequestForm : public AForm
 
 	RobotomyRequestForm& operator=(const RobotomyRequestForm &change);
 
-	virtual void	execute(Bureaucrat const& executor);
+	virtual void	justDoIt() const;
 };
 
 #endif

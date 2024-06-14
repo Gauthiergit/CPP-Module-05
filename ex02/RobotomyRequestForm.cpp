@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:06:28 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:07:40 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:34:15 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,14 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 {
 	AForm::operator=(change);
 	return (*this);
+}
+
+void	RobotomyRequestForm::justDoIt() const
+{
+	std::cout << YELLOW << "drrrrriiiiiiiiiiiiiiiiiilllll" << RESET<< std::endl;
+	int random_number = rand();
+	if (random_number % 2 == 0)
+		std::cout << BLUE << this->_target << YELLOW << " has been robotomized succesfully." << RESET << std::endl;
+	else
+		std::cout << YELLOW << "Robotomy failed" << RESET << std::endl;
 }

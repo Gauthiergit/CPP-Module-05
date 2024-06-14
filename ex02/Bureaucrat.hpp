@@ -23,9 +23,9 @@
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -61,7 +61,8 @@ class Bureaucrat
 	int 	getGrade() const;
 	void 	incrementGrade();
 	void 	decrementGrade();
-	void	signForm(const Form& form);
+	void	signForm(AForm& form);
+	void 	executeForm(AForm const& form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bu);

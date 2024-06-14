@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:09:30 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:10:48 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:34:09 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 {
 	AForm::operator=(change);
 	return (*this);
+}
+
+void	PresidentialPardonForm::justDoIt() const
+{
+	std::cout << BLUE << this->_target << YELLOW << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
 }

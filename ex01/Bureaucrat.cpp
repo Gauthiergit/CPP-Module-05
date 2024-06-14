@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 16:46:08 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 14:05:37 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 16:41:16 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,19 @@ void Bureaucrat::decrementGrade()
 	std::cout << BLUE << this->_name << YELLOW << "'s grad decremented." << RESET << std::endl;
 }
 
-void		Bureaucrat::signForm(const Form& form)
+void		Bureaucrat::signForm(Form& form)
 {
-	if (form.getSigned())
-		std::cout << BLUE << this->_name << YELLOW << " signed " <<
-			BLUE << form.getName() << RESET << std::endl;
-	else
-		std::cout << BLUE << this->_name << YELLOW << " couldn't sign " <<
-			BLUE << form.getName() << YELLOW << " because he hasn't reached the grade "
-				<< BLUE << form.getSigrade() << RESET << std::endl;
+	try
+	{
+		form.beSigned(*this);
+		std::cout << BLUE << this->getName() << YELLOW << " signed " << BLUE <<
+			form.getName() << RESET << std::endl;
+	}
+	catch (std::exception & e) 
+	{
+		std::cerr << BLUE << this->getName() << RED << " couldn’t sign " << 
+			BLUE << form.getName() << RED << " because " << e.what() << RESET << std::endl; 
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bu)

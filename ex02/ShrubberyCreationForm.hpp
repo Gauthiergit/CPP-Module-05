@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:27:41 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/13 17:40:56 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/14 17:34:03 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class  ShrubberyCreationForm : public AForm
 
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &change);
 
-	virtual void	execute(Bureaucrat const& executor);
+	virtual void	justDoIt() const;
 };
 
 
