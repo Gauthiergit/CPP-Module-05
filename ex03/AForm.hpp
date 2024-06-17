@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 15:00:03 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/16 22:03:54 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/17 11:36:24 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Bureaucrat.hpp"
 #include <cstdlib>
 #include <fstream>
+#include <ctime>
 
 class Bureaucrat;
 

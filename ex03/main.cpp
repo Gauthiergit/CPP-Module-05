@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:05:09 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/16 23:02:01 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/17 11:35:44 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,48 +21,28 @@ int main()
 {
 	try
 	{
-		Bureaucrat louna("louna", 120);
-		Bureaucrat max("max", 3);
-
-		std::cout << "----------------------------------------------" << std::endl;
-		AForm* a = new PresidentialPardonForm("thomas");
-		AForm* b = new RobotomyRequestForm("thomas");
-		AForm* c = new ShrubberyCreationForm("garden");
-
-		std::cout << "----------------------------------------------" << std::endl;
-		louna.signForm(*b);
-		louna.signForm(*c);
-		max.signForm(*b);
-		louna.executeForm(*a);
-		max.signForm(*a);
-		louna.executeForm(*a);
-		max.executeForm(*a);
-		max.executeForm(*c);
-		for(int i = 0; i < 5; i++)
-			max.executeForm(*b);
-		std::cout << "----------------------------------------------" << std::endl;
-		delete a;
-		delete b;
-		delete c;	
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << RED << e.what() << RESET << std::endl;
-	}
-	std::cout << "----------------------------------------------" << std::endl;
-	try
-	{
 		Intern marion;
-		AForm* form = marion.makeForm("presidential pardon", "bob");
+		std::cout << "----------------------------------------------" << std::endl;
+		AForm* form1 = marion.makeForm("presidential pardon", "bob");
+		AForm* form2 = marion.makeForm("robotomy request", "gautier");
+		AForm* form3 = marion.makeForm("shrubbery creation", "42 school");
+		std::cout << "----------------------------------------------" << std::endl;
 		Bureaucrat max("max", 3);
-		max.signForm(*form);
-		max.executeForm(*form);
-		delete form;
+		max.signForm(*form1);
+		max.executeForm(*form1);
+		max.signForm(*form2);
+		max.executeForm(*form2);
+		max.signForm(*form3);
+		max.executeForm(*form3);
+		delete form1;
+		delete form2;
+		delete form3;
+		AForm* form4 = marion.makeForm("sausage party", "flo");
+		max.signForm(*form4);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-	
 	return (0);
 }

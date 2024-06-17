@@ -51,5 +51,7 @@ AForm* Intern::makeForm(const std::string form_name, const std::string target)
 {
 	int i = 0;
 	for(; i < 3 && this->_form[i]->getName() != form_name; i++);
+	if (i < 3)
+		std::cout << YELLOW << "Intern creates " << BLUE << this->_form[i]->getName()<< RESET << std::endl;
 	return i < 3 ? this->_form[i]->clone(target) : throw Intern::FormExistException();
 }

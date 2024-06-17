@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:06:28 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/16 22:47:08 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/17 11:37:16 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 void	RobotomyRequestForm::justDoIt() const
 {
 	std::cout << YELLOW << "drrrrriiiiiiiiiiiiiiiiiilllll" << RESET<< std::endl;
+	srand(static_cast<unsigned int>(time(0)));
 	int random_number = rand();
 	if (random_number % 2 == 0)
 		std::cout << BLUE << this->_target << YELLOW << " has been robotomized succesfully." << RESET << std::endl;
